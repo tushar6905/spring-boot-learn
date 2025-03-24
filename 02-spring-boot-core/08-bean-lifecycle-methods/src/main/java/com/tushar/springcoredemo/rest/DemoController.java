@@ -11,34 +11,26 @@ public class DemoController {
 
 
     private Coach myCoach;
-    private Coach anotherCoach;
+
     @Autowired
     public void setCoach(
-            @Qualifier("baseBallCoach") Coach theCoach,
-            @Qualifier("baseBallCoach")Coach theAnotherCoach){
+            @Qualifier("baseBallCoach") Coach theCoach) {
         System.out.println("In Constructor: " + getClass().getSimpleName());
         myCoach = theCoach;
-        anotherCoach=theAnotherCoach;
     }
 
     @GetMapping("/dailyworkout")
-    public String getDailyWorkout(){
+    public String getDailyWorkout() {
         return myCoach.getDailyWorkout();
     }
 
     @GetMapping("/")
-    public String sayHello(){
+    public String sayHello() {
         return "Hlo guys";
     }
 
     @GetMapping("/tushar")
-    public String saytushar(){
+    public String saytushar() {
         return "Hlo tushar";
     }
-
-    @GetMapping("/check")
-    public String check(){
-        return "Comparison beans: myCoach == anotherCoach, "+ (myCoach == anotherCoach);
-    }
 }
-

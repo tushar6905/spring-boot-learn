@@ -1,17 +1,19 @@
 package com.tushar.springcoredemo.common;
 
-import org.springframework.context.annotation.Lazy;
+
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 
 @Component
+public class CricketCoach implements Coach {
 
-public class TrackCoach implements Coach {
-
-    public TrackCoach(){
+    public  CricketCoach(){
         System.out.println("In Constructor: " + getClass().getSimpleName());
     }
+
     @Override
     public String getDailyWorkout(){
-        return "I am your Track Coach";
+        return  "Practice bowling for 15 min on daily basis as fast as u can" ;
     }
 }
+
